@@ -104,32 +104,56 @@ for (var value in allevents) {
     document.getElementById("events").innerHTML += allevents[value].eventoutput();
 }
 //get dates to array
-var arr = new Array();
-for (var value in allplaces) {
-    arr.push(allplaces[value].visited);
+var placearr = new Array();
+var restaurantarr = new Array();
+var eventarr = new Array();
+for (var value_1 in allplaces) {
+    placearr.push([allplaces[value_1].visited, allplaces[value_1]]);
 }
-for (var value in allrestaurants) {
-    arr.push(allrestaurants[value].visited);
+for (var value_2 in allrestaurants) {
+    restaurantarr.push([allrestaurants[value_2].visited, allrestaurants[value_2]]);
 }
-for (var value in allevents) {
-    arr.push(allevents[value].visited);
+for (var value_3 in allevents) {
+    eventarr.push([allevents[value_3].visited, allevents[value_3]]);
 }
-for (var value in arr) {
-    var date = new Date(arr[value]);
+for (var value_4 in placearr) {
+    var date = new Date(placearr[value_4]);
+}
+for (var value_5 in restaurantarr) {
+    var date = new Date(restaurantarr[value_5]);
+}
+for (var value_6 in eventarr) {
+    var date = new Date(eventarr[value_6]);
 }
 document.getElementById("ascending").addEventListener("click", sortascending, false);
 function sortascending() {
     //sort ascending
-    arr.sort(function (a, b) {
+    placearr.sort(function (a, b) {
         return a < b ? -1 : a > b ? 1 : 0;
     });
-    console.log(arr);
+    restaurantarr.sort(function (a, b) {
+        return a < b ? -1 : a > b ? 1 : 0;
+    });
+    eventarr.sort(function (a, b) {
+        return a < b ? -1 : a > b ? 1 : 0;
+    });
+    console.log(placearr);
+    console.log(restaurantarr);
+    console.log(eventarr);
 }
 document.getElementById("descending").addEventListener("click", sortdescending, false);
 function sortdescending() {
-    //sort descending
-    arr.sort(function (a, b) {
+    //sort ascending
+    placearr.sort(function (a, b) {
         return a > b ? -1 : a < b ? 1 : 0;
     });
-    console.log(arr);
+    restaurantarr.sort(function (a, b) {
+        return a > b ? -1 : a < b ? 1 : 0;
+    });
+    eventarr.sort(function (a, b) {
+        return a > b ? -1 : a < b ? 1 : 0;
+    });
+    console.log(placearr);
+    console.log(restaurantarr);
+    console.log(eventarr);
 }

@@ -16,19 +16,15 @@ body{
 	z-index: 1;
 	margin: 0;
 }
+.dropdown-menu li{
+	cursor: pointer;
+}
 .mainHeading{
 	text-align: center;
 }
 .headings {
 	margin-left: 25px;
 	color: #313131;
-}
-.sortbtn{
-	background: none;
-	border: 1px solid #222;
-	outline: none;
-	font-size: 1.3em;
-	color: #222;
 }
 hr{
 	border-color: rgb(34,34,34, .5);
