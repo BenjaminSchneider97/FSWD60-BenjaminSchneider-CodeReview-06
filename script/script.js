@@ -117,5 +117,12 @@ for (var value in allevents) {
 for (var value in arr) {
     var date = new Date(arr[value]);
 }
-arr.sort(function (a, b) { return a[0] - b[0]; });
+//sort descending
+arr.sort(function (a, b) {
+    return a > b ? -1 : a < b ? 1 : 0;
+});
+//sort ascending
+arr.sort(function (a, b) {
+    return a < b ? -1 : a > b ? 1 : 0;
+});
 console.log(arr);
