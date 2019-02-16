@@ -55,9 +55,13 @@ let allplaces = new Array();
 let a = document.createElement("div");
 a.setAttribute("class", "row");
 a.setAttribute("id", "places");
+let x = document.createElement("div");
+x.setAttribute("class", "col-lg-12");
+x.setAttribute("id", "placeheading");
+document.getElementById("mainContent").append(x);
 document.getElementById("mainContent").append(a);
 
-document.getElementById("places").innerHTML += `<div class="headings"><h1>Places</h1></div><hr>`
+document.getElementById("placeheading").innerHTML += `<div class="headings"><h1>Places</h1></div><hr>`
 
 for(var value in allplaces){
 	document.getElementById("places").innerHTML += allplaces[value].placeoutput();
@@ -99,8 +103,13 @@ let b = document.createElement("div");
 b.setAttribute("class", "row");
 b.setAttribute("id", "restaurant");
 document.getElementById("mainContent").append(b);
+let y = document.createElement("div");
+y.setAttribute("class", "col-lg-12");
+y.setAttribute("id", "restaurantheading");
+document.getElementById("mainContent").append(y);
+document.getElementById("mainContent").append(b);
 
-document.getElementById("restaurant").innerHTML += `<div class="headings"><h1>Restaurants</h1></div><hr>`
+document.getElementById("restaurantheading").innerHTML += `<div class="headings"><h1>Restaurants</h1></div><hr>`
 
 for(var value in allrestaurants){
 	document.getElementById("restaurant").innerHTML += allrestaurants[value].restaurantoutput();
@@ -139,8 +148,13 @@ let c = document.createElement("div");
 c.setAttribute("class", "row");
 c.setAttribute("id", "events");
 document.getElementById("mainContent").append(c);
+let z = document.createElement("div");
+z.setAttribute("class", "col-lg-12");
+z.setAttribute("id", "eventheading");
+document.getElementById("mainContent").append(z);
+document.getElementById("mainContent").append(c);
 
-document.getElementById("events").innerHTML += `<div class="headings"><h1>Events</h1></div><hr>`
+document.getElementById("eventheading").innerHTML += `<div class="headings"><h1>Events</h1></div><hr>`
 
 for(var value in allevents){
 	document.getElementById("events").innerHTML += allevents[value].eventoutput();
@@ -183,12 +197,44 @@ function sortascending(){
 	placearr.sort(function(a, b) {
 	    return a<b ? -1 : a>b ? 1 : 0;
 	});
+
+	var replacep = document.getElementById("places");
+
+	while(replacep.hasChildNodes()){
+			replacep.removeChild(replacep.firstChild);
+		}
+
+	for(var value in placearr){
+		document.getElementById("places").innerHTML += placearr[value][1].placeoutput();
+	}
+
 	restaurantarr.sort(function(a, b) {
 	    return a<b ? -1 : a>b ? 1 : 0;
 	});
+
+	var replacer = document.getElementById("restaurant");
+
+	while(replacer.hasChildNodes()){
+			replacer.removeChild(replacer.firstChild);
+		}
+
+	for(var value in restaurantarr){
+		document.getElementById("restaurant").innerHTML += restaurantarr[value][1].restaurantoutput();
+	}
+
 	eventarr.sort(function(a, b) {
 	    return a<b ? -1 : a>b ? 1 : 0;
 	});
+
+	var replacee = document.getElementById("events");
+
+	while(replacee.hasChildNodes()){
+			replacee.removeChild(replacee.firstChild);
+		}
+
+	for(var value in eventarr){
+		document.getElementById("events").innerHTML += eventarr[value][1].eventoutput();
+	}
 
 	console.log(placearr);
 	console.log(restaurantarr);
@@ -202,12 +248,44 @@ function sortdescending(){
 	placearr.sort(function(a, b) {
 	    return a>b ? -1 : a<b ? 1 : 0;
 	});
+
+	var replacep = document.getElementById("places");
+
+	while(replacep.hasChildNodes()){
+			replacep.removeChild(replacep.firstChild);
+		}
+
+	for(var value in placearr){
+		document.getElementById("places").innerHTML += placearr[value][1].placeoutput();
+	}
+
 	restaurantarr.sort(function(a, b) {
 	    return a>b ? -1 : a<b ? 1 : 0;
 	});
+
+	var replacer = document.getElementById("restaurant");
+
+	while(replacer.hasChildNodes()){
+			replacer.removeChild(replacer.firstChild);
+		}
+
+	for(var value in restaurantarr){
+		document.getElementById("restaurant").innerHTML += restaurantarr[value][1].restaurantoutput();
+	}
+
 	eventarr.sort(function(a, b) {
 	    return a>b ? -1 : a<b ? 1 : 0;
 	});
+
+	var replacee = document.getElementById("events");
+
+	while(replacee.hasChildNodes()){
+			replacee.removeChild(replacee.firstChild);
+		}
+
+	for(var value in eventarr){
+		document.getElementById("events").innerHTML += eventarr[value][1].eventoutput();
+	}
 
 	console.log(placearr);
 	console.log(restaurantarr);
