@@ -74,7 +74,7 @@ class restaurant extends locations{
 	private phone : string;
 
 	constructor(name, image, visited, address, food, openinghours, phone, webaddress){
-		super(name, image, , visited, address);
+		super(name, image, visited, address);
 		this.food = food;
 		this.openinghours = openinghours;
 		this.phone = phone;
