@@ -117,12 +117,19 @@ for (var value in allevents) {
 for (var value in arr) {
     var date = new Date(arr[value]);
 }
-//sort descending
-arr.sort(function (a, b) {
-    return a > b ? -1 : a < b ? 1 : 0;
-});
-//sort ascending
-arr.sort(function (a, b) {
-    return a < b ? -1 : a > b ? 1 : 0;
-});
-console.log(arr);
+document.getElementById("ascending").addEventListener("click", sortascending, false);
+function sortascending() {
+    //sort ascending
+    arr.sort(function (a, b) {
+        return a < b ? -1 : a > b ? 1 : 0;
+    });
+    console.log(arr);
+}
+document.getElementById("descending").addEventListener("click", sortdescending, false);
+function sortdescending() {
+    //sort descending
+    arr.sort(function (a, b) {
+        return a > b ? -1 : a < b ? 1 : 0;
+    });
+    console.log(arr);
+}

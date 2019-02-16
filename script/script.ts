@@ -163,16 +163,25 @@ for(let value in allevents){
 }
 
 for(let value in arr){
-	var date = new Date(arr[value]);
+	let date = new Date(arr[value]);
 }
 
-//sort descending
-arr.sort(function(a, b) {
-    return a>b ? -1 : a<b ? 1 : 0;
-});
+document.getElementById("ascending").addEventListener("click", sortascending, false);
 
-//sort ascending
-arr.sort(function(a, b) {
-    return a<b ? -1 : a>b ? 1 : 0;
-});
-console.log(arr);
+function sortascending(){	
+	//sort ascending
+	arr.sort(function(a, b) {
+	    return a<b ? -1 : a>b ? 1 : 0;
+	});
+	console.log(arr);
+}
+
+document.getElementById("descending").addEventListener("click", sortdescending, false);
+
+function sortdescending(){
+	//sort descending
+	arr.sort(function(a, b) {
+    	return a>b ? -1 : a<b ? 1 : 0;
+	});
+	console.log(arr);
+}
